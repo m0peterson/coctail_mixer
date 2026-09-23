@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Коктейльный миксер</title>
+  <meta name="description" content="Отметь, что есть в баре, и узнай, какие коктейли можно смешать прямо сейчас, что докупить и что попробовать. Рецепты, тир-листы и подбор по вкусу.">
+  <meta name="theme-color" content="#161213" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf6f1" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#view">К содержимому</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="logo" href="#/mix" aria-label="Коктейльный миксер, на главную">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M5 7h22L16 19z" fill="currentColor" opacity=".9"/>
+          <path d="M16 19v8M11 27h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+          <circle cx="24" cy="7" r="4.2" fill="var(--lime)" stroke="var(--bg)" stroke-width="1.6"/>
+        </svg>
+        <span class="logo__text">Миксер</span>
+      </a>
+      <nav class="tabs" aria-label="Разделы">
+        <a class="tab" href="#/bar" data-route="bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3.2l1.6 2.6V20a2 2 0 0 1-2 2h-3.2a2 2 0 0 1-2-2V7.8L10 5.2z M8.4 12h7.2"/></svg>
+          <span>Мой бар</span>
+        </a>
+        <a class="tab" href="#/mix" data-route="mix">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-8 9z M12 13v7 M8 20h8"/></svg>
+          <span class="tab__full">Что смешать</span><span class="tab__short">Смешать</span>
+        </a>
+        <a class="tab" href="#/tiers" data-route="tiers">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h5v5H3z M3 15h5v5H3z M11 6.5h10 M11 17.5h6"/></svg>
+          <span>Тиры</span>
+        </a>
+        <a class="tab" href="#/quiz" data-route="quiz">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg>
+          <span>Подбор</span>
+        </a>
+        <a class="tab" href="#/all" data-route="all">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3 M9 7h6"/></svg>
+          <span>Рецепты</span>
+        </a>
+      </nav>
+      <a class="bar-pill" href="#/bar" id="bar-pill" aria-label="Ингредиентов в баре">
+        <span class="bar-pill__count" id="bar-count">0</span>
+        <span class="bar-pill__label">в баре</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="view" class="view" tabindex="-1">
+    <noscript><p class="noscript">Для работы миксера нужен JavaScript.</p></noscript>
+  </main>
+
+  <dialog id="recipe" class="sheet" aria-labelledby="recipe-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
