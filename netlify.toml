@@ -1,0 +1,4 @@
+# Netlify: сборка не нужна, публикуется папка public
+[build]
+  publish = "public"
+  command = ""

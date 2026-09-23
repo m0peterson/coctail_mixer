@@ -1,0 +1,11 @@
+# Render: Blueprint для бесплатного статического сайта
+services:
+  - type: web
+    name: cocktail-mixer
+    runtime: static
+    buildCommand: echo "no build needed"
+    staticPublishPath: ./public
+    headers:
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
